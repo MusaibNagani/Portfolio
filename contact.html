@@ -11,6 +11,7 @@
     <div class="wrapper">
       <header>
         <div class="logo"><i class="fa-solid fa-m"></i><div class="logo-text">Musaib Nagani</div></div>
+        <button id="theme-toggle" class="btn">Toggle Mode</button>
         <nav>
           <ul class="navlinks">
             <li><a href="index.html">Home</a></li>
@@ -32,5 +33,18 @@
       </div>
     </div>
   </div>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const currentTheme = localStorage.getItem('theme') || systemTheme;
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+  </script>
+  
 </body>
 </html>
