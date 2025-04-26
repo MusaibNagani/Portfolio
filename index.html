@@ -1,85 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musaib Nagani | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-     <div class="hero-header">
-        <div class="wrapper">
-            <header>
-                <div class="logo">
-                    <i class="fa-solid fa-m"></i>
-                    <div class="logo-text"> Musaib Nagani</div>
-                </div>
-                <button id="theme-toggle" class="btn">Toggle Mode</button>
-                <nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="navlinks">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="projects.html">Portfolio</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="container">
-                 <div class="hero-pic">
-                    <img src="images/Me.jpg" alt="My Profile Picture">
-                 </div>
-                 <div class="hero-text">
-                    <h5>Hi, I'm a <span class="input">AI ML enthusiast</span></h5>
-                    <h1> Musaib Nagani</h1>
-                    <p>
-                        Computer Science graduate with a specialization in Artificial Intelligence and a strong foundation in machine learning, data analytics, and software engineering. Passionate about solving real-world problems using data-driven approaches and building impactful, scalable systems.
-                    </p>
-                    
 
-                    <div class="btn-group">
-                       <a href="#" class="btn active">Download CV</a>
-                       <a href="#" class="btn">Contact</a>
-                    </div>
-                 </div>
-            </div>
+  <div class="hero-header" id="home">
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <i class="fa-solid fa-m"></i>
+          <div class="logo-text">Musaib Nagani</div>
         </div>
-     </div>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-     <script>
-        var togglebtn=document.querySelector(".togglebtn");
-        var nav=document.querySelector(".navlinks");
-        var links=document.querySelector(".navlinks li");
+        <button id="theme-toggle" class="btn">Toggle Mode</button>
+        <nav>
+          <ul class="navlinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
 
-        togglebtn.addEventListener("click", function(){
-            this.classList.toggle("click");
-            nav.classList.toggle("open");
-        })
+      <div class="container">
+        <div class="hero-pic">
+          <img src="images/Me.jpg" alt="My Profile Picture">
+        </div>
+        <div class="hero-text">
+          <h5>Hi, I'm a <span class="input">AI ML enthusiast</span></h5>
+          <h1>Musaib Nagani</h1>
+          <p>
+            Computer Science graduate specializing in AI and Data Analytics. Passionate about solving real-world problems through data-driven approaches.
+          </p>
+          <div class="btn-group">
+            <a href="docs/Musaib_Nagani_Resume.pdf" class="btn active" download>Download CV</a>
+            <a href="#contact" class="btn">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        var typed=new Typed(".input",{
-            strings:["Data Analyst","Data Engineer","Data Scientist", "AI ML enthusiast"],
-            typedSpeed:70,
-            backSpeed:55,
-            loop:true
-        })
-     </script>
-     <script>
-        const toggle = document.getElementById('theme-toggle');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const currentTheme = localStorage.getItem('theme') || systemTheme;
-        document.documentElement.setAttribute('data-theme', currentTheme);
-      
-        toggle.addEventListener('click', () => {
-          const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-          document.documentElement.setAttribute('data-theme', theme);
-          localStorage.setItem('theme', theme);
-        });
-      </script>      
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section">
+    <div class="wrapper hero-text">
+      <h1>Portfolio</h1>
+      <p>Checkout some of my projects and contributions in AI, Machine Learning, and Data Analytics.</p>
+      <!-- Add project details/cards here -->
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="section">
+    <div class="wrapper hero-text">
+      <h1>Resume</h1>
+      <p>Download or view my resume below:</p>
+      <div class="btn-group">
+        <a href="docs/Musaib_Nagani_Resume.pdf" target="_blank" class="btn active">Download Resume</a>
+      </div>
+      <iframe src="docs/Musaib_Nagani_Resume.pdf" width="100%" height="600px" style="border: none; margin-top: 2rem;"></iframe>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="wrapper hero-text">
+      <h1>Contact Me</h1>
+      <p>You can reach out via the links below or email me directly.</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/in/musaib-nagani/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/MusaibNagani"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/musaibnagani_"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:naganim01@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+  <script>
+    var typed = new Typed(".input", {
+      strings: ["Data Analyst", "Data Engineer", "Data Scientist", "AI ML Enthusiast"],
+      typeSpeed: 70,
+      backSpeed: 55,
+      loop: true
+    });
+  </script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const currentTheme = localStorage.getItem('theme') || systemTheme;
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    toggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+  </script>
 </body>
 </html>
