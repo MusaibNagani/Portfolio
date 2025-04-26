@@ -201,16 +201,33 @@ nav ul li a {
 
 .footer {
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0;
   background-color: var(--bg);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text);
   border-top: 1px solid var(--box);
-  margin-top: 40px;
+  margin-top: auto;
 }
 
 .footer p {
   margin: 0;
   opacity: 0.7;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
+
+.footer p:hover {
+  opacity: 1;
+}
+
+body, html {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+}
+
