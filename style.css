@@ -198,3 +198,19 @@ nav ul li a {
 .social a:hover {
   color: var(--primary);
 }
+
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: var(--bg);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  border-top: 1px solid var(--box);
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 0;
+  opacity: 0.7;
+}
