@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Musaib Nagani | Portfolio</title>
+
+  <!-- Modern Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS and Icons -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
@@ -16,7 +21,9 @@
           <i class="fa-solid fa-m"></i>
           <div class="logo-text">Musaib Nagani</div>
         </div>
-        <button id="theme-toggle" class="btn">Toggle Mode</button>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-sun"></i>
+        </button>
         <nav>
           <ul class="navlinks">
             <li><a href="#home">Home</a></li>
@@ -32,7 +39,7 @@
           <img src="images/Me.jpg" alt="My Profile Picture">
         </div>
         <div class="hero-text">
-          <h5>Hi, I'm a <span class="input">AI ML enthusiast</span></h5>
+          <h5>Hi, I'm a <span class="input">AI ML Enthusiast</span></h5>
           <h1>Musaib Nagani</h1>
           <p>
             Computer Science graduate specializing in AI and Data Analytics. Passionate about solving real-world problems through data-driven approaches.
@@ -50,8 +57,7 @@
   <section id="portfolio" class="section">
     <div class="wrapper hero-text">
       <h1>Portfolio</h1>
-      <p>Checkout some of my projects and contributions in AI, Machine Learning, and Data Analytics.</p>
-      <!-- Add project details/cards here -->
+      <p>Check out some of my projects in AI, Machine Learning, and Data Analytics.</p>
     </div>
   </section>
 
@@ -90,8 +96,7 @@
       backSpeed: 55,
       loop: true
     });
-  </script>
-  <script>
+
     const toggle = document.getElementById('theme-toggle');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     const currentTheme = localStorage.getItem('theme') || systemTheme;
@@ -101,7 +106,9 @@
       const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+      toggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
     });
   </script>
+
 </body>
 </html>
