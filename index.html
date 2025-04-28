@@ -31,7 +31,6 @@
           </ul>
         </nav>
       </header>
-      
 
       <div class="container">
         <div class="hero-pic">
@@ -55,18 +54,58 @@
   <section id="portfolio" class="section">
     <div class="wrapper hero-text">
       <h1>Portfolio</h1>
-      <p>Check out some of my projects in AI, Machine Learning, and Data Analytics.</p>
+      <p>Here are a few things I've worked on:</p>
+      
+      <div class="projects">
+        <a href="https://github.com/MusaibNagani/Default-of-Credit-Card-Clients" target="_blank" class="project-card fade-in" style="background-image: url('images/DefaultOfCreditCard.jpg');">
+          <div class="card-content">
+            <h3>Credit Card Default Prediction</h3>
+            <p>Predicting customer default probability using ML and data analytics.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/MusaibNagani/Single-Cell-RNA-Sequencing" target="_blank" class="project-card fade-in" style="background-image: url('images/RNA.webp');">
+          <div class="card-content">
+            <h3>Single-Cell RNA Sequencing</h3>
+            <p>Exploring single-cell RNA sequencing data with advanced ML techniques.</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/MusaibNagani/ResearchCodes" target="_blank" class="project-card fade-in" style="background-image: url('images/knn.png');">
+          <div class="card-content">
+            <h3>Geometric Algorithm (KNN)</h3>
+            <p>Exploring algorithmic fundamentals, robustness, and adversarial impacts.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="view-more">
+        <a href="https://github.com/MusaibNagani" target="_blank" class="btn">View More Projects</a>
+      </div>
+
     </div>
   </section>
 
   <section id="resume" class="section">
     <div class="wrapper hero-text">
-      <h1>Resume</h1>
-      <p>Download or view my resume below:</p>
-      <div class="btn-group">
-        <a href="docs/Musaib_Nagani_Resume.pdf" target="_blank" class="btn active">Download Resume</a>
+      <h1>Resume Highlights</h1>
+      <div class="resume-cards">
+        <div class="resume-card">
+          <h3>Experience</h3>
+          <p>Data Analyst, Teaching Assistant, AI Researcher.</p>
+        </div>
+        <div class="resume-card">
+          <h3>Skills</h3>
+          <p>Python, SQL, Machine Learning, Data Analytics, Power BI, Microsoft Azure</p>
+        </div>
+        <div class="resume-card">
+          <h3>Education</h3>
+          <p>Bachelor of Computer Science (Honours) — Specializing in AI, University of Windsor</p>
+        </div>
       </div>
-      <iframe src="docs/Musaib_Nagani_Resume.pdf" width="100%" height="600px" style="border: none; margin-top: 2rem;"></iframe>
+      <div class="resume-buttons">
+        <a href="docs/Musaib_Nagani_Resume.pdf" download class="btn active">Download Full Resume</a>
+      </div>
     </div>
   </section>
 
@@ -80,10 +119,13 @@
         <a href="https://www.instagram.com/musaibnagani_"><i class="fa-brands fa-instagram"></i></a>
         <a href="mailto:naganim01@gmail.com"><i class="fa-solid fa-envelope"></i></a>
       </div>
+
+      <div class="copyright-text">
+        © <span id="year"></span> Musaib Nagani
+      </div>
     </div>
   </section>
 
-  <!-- Scroll To Top Button -->
   <button id="scrollToTopBtn" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
@@ -122,6 +164,21 @@
     scrollToTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fadeInElements.forEach(el => {
+      observer.observe(el);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
 </body>
