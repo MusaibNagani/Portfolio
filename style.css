@@ -35,6 +35,9 @@ body {
   overflow-x: hidden;
   background-color: var(--bg);
   color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header Layout */
@@ -54,6 +57,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  flex: 1;
 }
 
 /* Header Navigation */
@@ -184,7 +188,7 @@ nav ul li a {
 
 /* Sections */
 .section {
-  padding: 100px 0;
+  padding: 80px 0 30px;
   min-height: 100vh;
 }
 
@@ -199,39 +203,7 @@ nav ul li a {
   color: var(--primary);
 }
 
-.footer {
-  width: 100%;
-  padding: 15px 0;
-  background-color: var(--bg);
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text);
-  border-top: 1px solid var(--box);
-  margin-top: auto;
-}
-
-.footer p {
-  margin: 0;
-  opacity: 0.7;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-}
-
-.footer p:hover {
-  opacity: 1;
-}
-
-body, html {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.wrapper {
-  flex: 1;
-}
-
-
+/* Scroll To Top Button */
 #scrollToTopBtn {
   position: fixed;
   bottom: 40px;
@@ -240,7 +212,6 @@ body, html {
   background-color: var(--primary);
   color: white;
   border: none;
-  outline: none;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -260,9 +231,3 @@ body, html {
 #scrollToTopBtn:hover {
   background-color: var(--accent);
 }
-
-
-.last-section {
-  padding-bottom: 30px;
-}
-
